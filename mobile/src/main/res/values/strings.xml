@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Good Vibrations</string>
+    <string name="service_name">Good Vibrations</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="default_settings">Defaults</string>
+    <string name="default_pattern">Pattern</string>
+    <string name="default_pattern_summary">
+        This pattern is used if no application specific pattern matches
+    </string>
+
+    <string name="application_specific">Application Specific Patterns</string>
+</resources>

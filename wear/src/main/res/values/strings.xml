@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Good Vibrations</string>
+    <string name="listening">Listening for vibration commands</string>
+
+</resources>

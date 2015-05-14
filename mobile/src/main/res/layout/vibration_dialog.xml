@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp">
+
+    <TableRow android:baselineAligned="false">
+        <TextView
+            android:id="@+id/delayText"
+            android:text="Delay" />
+
+        <SeekBar
+            android:id="@+id/delaySlider"
+            android:max="1000"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/delayValue"
+            android:minEms="3"
+            android:gravity="right" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/vibrationText1"
+            android:text="Vibration" />
+
+        <SeekBar
+            android:id="@+id/vibrationSlider1"
+            android:max="1000"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/vibrationValue1"
+            android:gravity="right"
+            android:text="1000" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/pauseText"
+            android:text="Pause" />
+
+        <SeekBar
+            android:id="@+id/pauseSlider"
+            android:max="1000"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/pauseValue"
+            android:gravity="right" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/vibrationText2"
+            android:text="Vibration" />
+
+        <SeekBar
+            android:id="@+id/vibrationSlider2"
+            android:max="1000"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/vibrationValue2"
+            android:gravity="right" />
+    </TableRow>
+
+</TableLayout>

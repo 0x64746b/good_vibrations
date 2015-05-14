@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:title="@string/default_settings">
+
+        <name.dtk.goodvibrations.VibrationPreference
+            android:key="default_pattern"
+            android:title="@string/default_pattern"
+            android:summary="@string/default_pattern_summary"
+            android:dialogTitle="@string/default_pattern"
+            android:defaultValue="2000, 1000"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/application_specific">
+
+        <PreferenceScreen
+            android:title="Add">
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+</PreferenceScreen>
