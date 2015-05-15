@@ -1,6 +1,8 @@
 package name.dtk.goodvibrations;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.os.Vibrator;
 import android.util.Base64;
 import android.util.Log;
@@ -36,7 +38,7 @@ public class MessageReceiver extends WearableListenerService {
         String command = event.getPath();
         String data = new String(event.getData(), Charset.forName("UTF-8"));
 
-        long[] pattern;
+        final long[] pattern;
 
         Log.d(TAG, String.format("Received %s message with data %s", command, data));
 
@@ -48,12 +50,21 @@ public class MessageReceiver extends WearableListenerService {
         }
 
         if (command.equals(COMMAND)) {
-            Log.d(
-                TAG,
-                String.format("Triggering vibration with pattern %s", Arrays.toString(pattern))
-            );
 
-            mVibrator.vibrate(pattern, -1);
+            // Avoid collision with incoming system notification
+            // which might suppress our call to `vibrate()`.
+            new Handler().postDelayed(new Runnable() {
+                public void run() {
+                    Log.d(
+                        TAG,
+                        String.format(
+                            "Triggering vibration with pattern %s",
+                            Arrays.toString(pattern)
+                        )
+                    );
+                    mVibrator.vibrate(pattern, -1);
+                }
+            }, 500);
         }
     }
 
