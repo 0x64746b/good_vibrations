@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="yellow_500" type="color">#ffeb3b</item>
+    <item name="yellow_a700" type="color">#ffd600</item>
+    <item name="purple_400" type="color">#ab47bc</item>
+</resources>
