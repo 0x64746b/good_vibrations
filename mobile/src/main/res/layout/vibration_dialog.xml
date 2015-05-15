@@ -11,7 +11,7 @@
 
         <SeekBar
             android:id="@+id/delaySlider"
-            android:max="1000"
+            android:max="2000"
             android:layout_weight="1" />
 
         <TextView
