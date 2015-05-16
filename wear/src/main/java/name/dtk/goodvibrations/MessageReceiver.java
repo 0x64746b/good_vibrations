@@ -39,6 +39,7 @@ public class MessageReceiver extends WearableListenerService {
         String data = new String(event.getData(), Charset.forName("UTF-8"));
 
         final long[] pattern;
+        final long delay;
 
         Log.d(TAG, String.format("Received %s message with data %s", command, data));
 
@@ -53,18 +54,25 @@ public class MessageReceiver extends WearableListenerService {
 
             // Avoid collision with incoming system notification
             // which might suppress our call to `vibrate()`.
+
+            delay = pattern[0];
+            pattern[0] = 0;
+
+            Log.d(
+                TAG,
+                String.format(
+                    "Triggering vibration with pattern %s in %d ms",
+                    Arrays.toString(pattern),
+                    delay
+                )
+            );
+
             new Handler().postDelayed(new Runnable() {
                 public void run() {
-                    Log.d(
-                        TAG,
-                        String.format(
-                            "Triggering vibration with pattern %s",
-                            Arrays.toString(pattern)
-                        )
-                    );
+                    Log.d(TAG, "Vibrating...");
                     mVibrator.vibrate(pattern, -1);
                 }
-            }, 500);
+            }, delay);
         }
     }
 
